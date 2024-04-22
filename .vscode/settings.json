@@ -2,6 +2,9 @@
     "files.associations": {
         "isa.h": "c",
         "klib-macros.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "trap.h": "c",
+        "klib.h": "c",
+        "stddef.h": "c"
     }
 }
