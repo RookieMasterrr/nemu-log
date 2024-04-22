@@ -17,37 +17,43 @@ void print_str(char *s) {
     }
 }
 
+
+
 //from now on, the printf is not from gnu/linux 
+// int printf(const char *s, ...) {
+//     char out[128];//buffer size
+//     va_list valist;
+//     va_start(valist,s);
+//     int index = 0;
+//     int c;
+//     while ((c=*(s++))!=0)
+//     {
+//         if (c=='%') {
+//             switch (*(s++))
+//             {
+//             case 's':
+//                 char* s_t = va_arg(valist,char*);
+//                 index = append_str(index,s_t,out);
+//             break;
+//             case 'd':
+//                 int int_t = va_arg(valist,int);
+//                 index = append_int(index,int_t,out);
+//             break;
+//             default:
+//                 printf("NOT IMPLEMENTED");
+//             }
+//         } else{
+//             out[index++]=c;
+//         }       
+//     }
+//     va_end(valist);
+//     // out[index++]=0;
+//     out[index++]=0;
+//     print_str(out);
+//     return 0;
+// }
+
 int printf(const char *s, ...) {
-    char out[128];//buffer size
-    va_list valist;
-    va_start(valist,s);
-    int index = 0;
-    int c;
-    while ((c=*(s++))!=0)
-    {
-        if (c=='%') {
-            switch (*(s++))
-            {
-            case 's':
-                char* s_t = va_arg(valist,char*);
-                index = append_str(index,s_t,out);
-            break;
-            case 'd':
-                int int_t = va_arg(valist,int);
-                index = append_int(index,int_t,out);
-            break;
-            default:
-                printf("NOT IMPLEMENTED");
-            }
-        } else{
-            out[index++]=c;
-        }       
-    }
-    va_end(valist);
-    // out[index++]=0;
-    out[index++]=0;
-    print_str(out);
     return 0;
 }
 

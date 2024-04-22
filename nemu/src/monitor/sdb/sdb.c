@@ -22,7 +22,7 @@
 #include <readline/history.h>
 #include "sdb.h"
 
-static int is_batch_mode = false;
+static int is_batch_mode = true;
 static void printNMemoryUnit(int N, vaddr_t address);
 
 void init_regex();
