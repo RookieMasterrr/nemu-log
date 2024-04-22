@@ -113,7 +113,6 @@ int exclude(type t, char* op, int x, int y)
 
 int main(void)
 {
-  // putch('Y');
   printf("#include <stdio.h>\n");
   printf("int main(void) {\n");
   printf("  int exit_code = 0;\n");
