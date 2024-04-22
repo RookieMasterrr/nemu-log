@@ -29,7 +29,7 @@ int printf(const char *s, ...) {
         if (c=='%') {
             switch (*(s++))
             {
-            case 'a':
+            case 's':
                 char* s_t = va_arg(valist,char*);
                 index = append_str(index,s_t,out);
             break;
@@ -45,7 +45,8 @@ int printf(const char *s, ...) {
         }       
     }
     va_end(valist);
-    out[index++]=0;
+    // out[index++]=0;
+    out[index]=0;
     print_str(out);
     return 0;
 }
