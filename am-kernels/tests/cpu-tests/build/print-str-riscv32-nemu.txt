@@ -1,0 +1,54 @@
+
+/home/rookiemaster/ics2023/am-kernels/tests/cpu-tests/build/print-str-riscv32-nemu.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+80000000 <_start>:
+80000000:	00000413          	li	s0,0
+80000004:	00009117          	auipc	sp,0x9
+80000008:	ffc10113          	addi	sp,sp,-4 # 80009000 <_end>
+8000000c:	034000ef          	jal	ra,80000040 <_trm_init>
+
+80000010 <main>:
+80000010:	ff010113          	addi	sp,sp,-16
+80000014:	00000517          	auipc	a0,0x0
+80000018:	08850513          	addi	a0,a0,136 # 8000009c <_etext>
+8000001c:	00112623          	sw	ra,12(sp)
+80000020:	040000ef          	jal	ra,80000060 <print_str>
+80000024:	00c12083          	lw	ra,12(sp)
+80000028:	00000513          	li	a0,0
+8000002c:	01010113          	addi	sp,sp,16
+80000030:	00008067          	ret
+
+80000034 <putch>:
+80000034:	a00007b7          	lui	a5,0xa0000
+80000038:	3ea78c23          	sb	a0,1016(a5) # a00003f8 <_end+0x1fff73f8>
+8000003c:	00008067          	ret
+
+80000040 <_trm_init>:
+80000040:	ff010113          	addi	sp,sp,-16
+80000044:	00000517          	auipc	a0,0x0
+80000048:	06450513          	addi	a0,a0,100 # 800000a8 <mainargs>
+8000004c:	00112623          	sw	ra,12(sp)
+80000050:	fc1ff0ef          	jal	ra,80000010 <main>
+80000054:	00050513          	mv	a0,a0
+80000058:	00100073          	ebreak
+8000005c:	0000006f          	j	8000005c <_trm_init+0x1c>
+
+80000060 <print_str>:
+80000060:	ff010113          	addi	sp,sp,-16
+80000064:	00812423          	sw	s0,8(sp)
+80000068:	00112623          	sw	ra,12(sp)
+8000006c:	00050413          	mv	s0,a0
+80000070:	00054503          	lbu	a0,0(a0)
+80000074:	00050c63          	beqz	a0,8000008c <print_str+0x2c>
+80000078:	00140413          	addi	s0,s0,1
+8000007c:	00140413          	addi	s0,s0,1
+80000080:	fb5ff0ef          	jal	ra,80000034 <putch>
+80000084:	fff44503          	lbu	a0,-1(s0)
+80000088:	fe051ae3          	bnez	a0,8000007c <print_str+0x1c>
+8000008c:	00c12083          	lw	ra,12(sp)
+80000090:	00812403          	lw	s0,8(sp)
+80000094:	01010113          	addi	sp,sp,16
+80000098:	00008067          	ret
