@@ -1,7 +1,7 @@
 #include <amtest.h>
 
 void rtc_test() {
-  printf("%s","hhh");
+  printf("%s","hello fucjer");
   AM_TIMER_RTC_T rtc;
   int sec = 1;
   while (1) {
