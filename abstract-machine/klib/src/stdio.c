@@ -9,20 +9,45 @@ int static digit_num_int(int num);
 int static append_int(int from, int num, char buf[]);
 int static append_str(int from, char *str, char buf[]);
 
-//from now on, the printf is not from gnu/linux 
-int printf(const char *fmt, ...) {
-  // panic("Not implemented");
-  putch('a');
-  putch('\n');
-  return 0;
-}
-
 void print_str(char *s) {
     int c;
     while ((c=*(s++))!=0)
     {
         putch(c);
     }
+}
+
+//from now on, the printf is not from gnu/linux 
+int printf(const char *s, ...) {
+    char out[128];//buffer size
+    va_list valist;
+    va_start(valist,s);
+    int index = 0;
+    int c;
+    while ((c=*(s++))!=0)
+    {
+        if (c=='%') {
+            switch (*(s++))
+            {
+            case 's':
+                char* s_t = va_arg(valist,char*);
+                index = append_str(index,s_t,out);
+            break;
+            case 'd':
+                int int_t = va_arg(valist,int);
+                index = append_int(index,int_t,out);
+            break;
+            default:
+                printf("NOT IMPLEMENTED");
+            }
+        } else{
+            out[index++]=c;
+        }       
+    }
+    va_end(valist);
+    out[index++]=0;
+    print_str(out);
+    return 0;
 }
 
 int vsprintf(char *out, const char *fmt, va_list ap) {
