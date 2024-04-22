@@ -6,6 +6,7 @@
         "trap.h": "c",
         "klib.h": "c",
         "stddef.h": "c",
-        "am.h": "c"
+        "am.h": "c",
+        "nemu.h": "c"
     }
 }
