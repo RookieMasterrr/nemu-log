@@ -46,7 +46,7 @@ int printf(const char *s, ...) {
     }
     va_end(valist);
     // out[index++]=0;
-    out[index]=0;
+    out[index++]=0;
     print_str(out);
     return 0;
 }
