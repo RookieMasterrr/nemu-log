@@ -1,5 +1,10 @@
 #include <stdio.h>
+
+void print_str(char *s);
+
+
 int main(void) {
+    print_str("Hello,World\n");
   int exit_code = 0;
 {
   volatile signed int x=-2147483648; volatile signed int y=-2147483648;
