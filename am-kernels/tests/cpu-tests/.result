@@ -9,3 +9,4 @@
 [  sub-longlong] [1;32mPASS[0m
 [           div] [1;32mPASS[0m
 [     print-str] [1;32mPASS[0m
+[         movsx] [1;32mPASS[0m
