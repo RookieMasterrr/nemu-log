@@ -1,18 +1,15 @@
 #include <stdio.h>
 
-void print_str(char *s);
 
 
 int main(void) {
-    print_str("Hello,World\n");
   int exit_code = 0;
 {
   volatile signed int x=-2147483648; volatile signed int y=-2147483648;
   if ((signed int)(x+y)!=(signed int)0) {
   printf("line %d: %s: %d  %s  %d  ==  %d =>  %s (%d)\n",__LINE__,"signed int",0x80000000,"+",0x80000000,0x0,(signed int)(x+y)==0x0?"PASS":"FAIL",(signed int)(x+y));
-  exit_code = 1;}else{
-    printf("%s","fuckyou");
-  }}
+  exit_code = 1;}
+}
 {
   volatile signed int x=-2147483648; volatile signed int y=-2147483647;
   if ((signed int)(x+y)!=(signed int)1) {
