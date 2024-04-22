@@ -21,3 +21,4 @@
 [           bit] [1;32mPASS[0m
 [ to-lower-case] [1;32mPASS[0m
 [     leap-year] [1;32mPASS[0m
+[        string] [1;32mPASS[0m
