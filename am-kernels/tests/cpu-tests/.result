@@ -12,3 +12,4 @@
 [         movsx] [1;32mPASS[0m
 [         shift] [1;32mPASS[0m
 [      goldbach] [1;32mPASS[0m
+[    matrix-mul] [1;32mPASS[0m
