@@ -1,0 +1,14 @@
+init program:
+    nemu/src/isa/$ISA/init.c
+
+memory management:
+    nemu/src/memory/paddr.c
+
+cpu object:
+    nemu/src/cpu/cpu-exec.c
+
+cpu struct:
+    nemu/src/isa/$ISA/include/isa-def.h
+
+useful macro:
+    nemu/include/debug.h
