@@ -1,6 +1,7 @@
 #include <amtest.h>
 
 void rtc_test() {
+  printf("%s","hhh");
   AM_TIMER_RTC_T rtc;
   int sec = 1;
   while (1) {
