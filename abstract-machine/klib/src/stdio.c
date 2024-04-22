@@ -19,6 +19,7 @@ void print_str(char *s) {
 
 //from now on, the printf is not from gnu/linux 
 int printf(const char *s, ...) {
+    print_str("111");
     char out[128];//buffer size
     va_list valist;
     va_start(valist,s);
