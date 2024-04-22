@@ -6,3 +6,4 @@
 [         mov-c] [1;32mPASS[0m
 [  add-longlong] [1;32mPASS[0m
 [           max] [1;32mPASS[0m
+[  sub-longlong] [1;32mPASS[0m
