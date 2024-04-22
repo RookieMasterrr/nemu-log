@@ -132,5 +132,5 @@ int main(void)
   printf("  return exit_code;\n");
   printf("}\n");
   
-  return 0;
+  return 1;
 }
